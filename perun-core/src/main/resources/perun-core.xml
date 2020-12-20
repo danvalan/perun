@@ -212,6 +212,7 @@ http://www.springframework.org/schema/context http://www.springframework.org/sch
 		<property name="attributesManagerImpl" ref="attributesManagerImpl"/>
 		<property name="databaseManager" ref="databaseManager"/>
 		<property name="coreConfig" ref="coreConfig"/>
+		<property name="perunPluginManagerImpl" ref="pluginManager"/>
 	</bean>
 
 	<bean id="vosManager" class="cz.metacentrum.perun.core.entry.VosManagerEntry" scope="singleton" depends-on="databaseManagerBl">
@@ -408,6 +409,10 @@ http://www.springframework.org/schema/context http://www.springframework.org/sch
 	</bean>
 
 	<bean id="synchronizer" class="cz.metacentrum.perun.core.impl.Synchronizer" scope="singleton" depends-on="databaseManagerBl">
+		<constructor-arg ref="perun" />
+	</bean>
+
+	<bean id="pluginManager" class="cz.metacentrum.perun.core.impl.PerunPluginManagerImpl" scope="singleton" depends-on="databaseManagerBl">
 		<constructor-arg ref="perun" />
 	</bean>
 

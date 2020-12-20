@@ -55,11 +55,13 @@ import cz.metacentrum.perun.core.bl.TasksManagerBl;
 import cz.metacentrum.perun.core.bl.UsersManagerBl;
 import cz.metacentrum.perun.core.bl.VosManagerBl;
 import cz.metacentrum.perun.core.impl.Auditer;
+import cz.metacentrum.perun.core.impl.PerunPluginManagerImpl;
 import cz.metacentrum.perun.core.impl.PerunSessionImpl;
 import cz.metacentrum.perun.core.implApi.AttributesManagerImplApi;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import java.nio.file.Paths;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
@@ -111,6 +113,7 @@ public class PerunBlImpl implements PerunBl {
 
 	private Auditer auditer = null;
 	private AttributesManagerImplApi attributesManagerImpl = null;
+	private PerunPluginManagerImpl perunPluginManagerImpl = null;
 
 	final static Logger log = LoggerFactory.getLogger(PerunBlImpl.class);
 
@@ -540,6 +543,13 @@ public class PerunBlImpl implements PerunBl {
 		return attributesManagerImpl;
 	}
 
+	public void setPerunPluginManagerImpl(PerunPluginManagerImpl perunPluginManagerImpl) {
+		this.perunPluginManagerImpl = perunPluginManagerImpl;
+	}
+
+	@Override
+	public PerunPluginManagerImpl getPerunPluginManagerImpl() {return perunPluginManagerImpl;}
+
 	@Override
 	public boolean isPerunReadOnly() {
 		return BeansUtils.isPerunReadOnly();
@@ -551,6 +561,10 @@ public class PerunBlImpl implements PerunBl {
 	public void initialize() {
 		this.extSourcesManagerBl.initialize(this.getPerunSession());
 		this.auditer.initialize();
+
+		this.perunPluginManagerImpl.init(Paths.get("D:\\GIT repository\\perun\\plugins"));
+		this.perunPluginManagerImpl.startPlugins();
+
 	}
 
 	@Override
