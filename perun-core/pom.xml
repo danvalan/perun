@@ -205,6 +205,13 @@
 			<groupId>com.oracle.database.nls</groupId>
 			<artifactId>orai18n</artifactId>
 		</dependency>
+
+		<!-- Plugin framework PF4J -->
+		<dependency>
+			<groupId>org.pf4j</groupId>
+			<artifactId>pf4j</artifactId>
+			<version>3.5.0</version>
+		</dependency>
 	</dependencies>
 
 			<!--

@@ -9,6 +9,7 @@ import cz.metacentrum.perun.core.api.exceptions.InternalErrorException;
 import cz.metacentrum.perun.core.api.exceptions.WrongAttributeAssignmentException;
 import cz.metacentrum.perun.core.api.exceptions.WrongReferenceAttributeValueException;
 import cz.metacentrum.perun.core.impl.PerunSessionImpl;
+import org.pf4j.ExtensionPoint;
 
 import java.util.List;
 
@@ -17,7 +18,7 @@ import java.util.List;
  *
  * @author Michal Stava <stavamichal@gmail.com>
  */
-public interface AttributesModuleImplApi {
+public interface AttributesModuleImplApi extends ExtensionPoint {
 
 	/**
 	 * Get list of attributes whose value are used in checking of validity of this attribute.
