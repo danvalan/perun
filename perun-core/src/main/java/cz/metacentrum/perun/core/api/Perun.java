@@ -2,6 +2,7 @@ package cz.metacentrum.perun.core.api;
 
 import cz.metacentrum.perun.core.api.exceptions.InternalErrorException;
 import cz.metacentrum.perun.core.impl.Auditer;
+import cz.metacentrum.perun.core.impl.PerunPluginManagerImpl;
 
 /**
  * Perun himself.
@@ -131,5 +132,12 @@ public interface Perun {
 	 * @return TasksManager
 	 */
 	TasksManager getTasksManager();
+
+
+	/**
+	 * Gets PerunPluginManager
+	 * @return PerunPluginManagerImpl
+	 */
+	PerunPluginManagerImpl getPerunPluginManagerImpl();
 
 }
