@@ -1,5 +1,6 @@
 package cz.metacentrum.perun.core.api;
 
+import cz.metacentrum.perun.core.blImpl.PerunBlImpl;
 import org.pf4j.ExtensionPoint;
 
 /**
@@ -7,7 +8,7 @@ import org.pf4j.ExtensionPoint;
  */
 public interface PerunPlugin extends ExtensionPoint {
 
-	void start(Perun perun);
+	void start(PerunBlImpl perun);
 
 	void stop();
 
