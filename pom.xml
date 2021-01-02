@@ -27,7 +27,7 @@
 		<module>perun-cabinet</module>
 		<module>perun-registrar-lib</module>
 		<module>perun-rpc</module>
-		<!--module>perun-ldapc</module>
+		<module>perun-ldapc</module>
 		<module>perun-notification</module>
 		<module>perun-dispatcher</module>
 		<module>perun-engine</module>
@@ -36,7 +36,7 @@
 		<module>perun-scim</module>
 		<module>perun-openapi</module>
 		<module>perun-cli-java</module>
-		<module>perun-auditlogger</module-->
+		<module>perun-auditlogger</module>
 	</modules>
 
 	<!-- common environmental and version properties-->
