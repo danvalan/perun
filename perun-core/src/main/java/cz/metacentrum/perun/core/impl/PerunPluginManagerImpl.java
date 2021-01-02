@@ -1,6 +1,5 @@
 package cz.metacentrum.perun.core.impl;
 
-import cz.metacentrum.perun.core.api.Perun;
 import cz.metacentrum.perun.core.api.PerunPlugin;
 import cz.metacentrum.perun.core.blImpl.PerunBlImpl;
 import org.pf4j.DefaultPluginManager;
